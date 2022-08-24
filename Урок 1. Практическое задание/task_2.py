@@ -19,12 +19,12 @@
 
 def quad(list_num):
     x = 0  # Константная
-    for n in list_num:  # Квадратичная
+    for _ in list_num:  # Квадратичная
         for m in list_num:  # Линейная
             if x == 0:  # Линейная
                 x = m  # Константная
             if x > m:  # Константная
-                x = m
+                x = m  # Константная
     return x    # Константная
 
 
