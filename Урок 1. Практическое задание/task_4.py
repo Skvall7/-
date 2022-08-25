@@ -22,3 +22,44 @@
 
 Примечание: ПРОШУ ВАС ВНИМАТЕЛЬНО ЧИТАТЬ ЗАДАНИЕ!
 """
+
+USERS = [('vasya', 1, '0098vas'), ('kiril', 0, '32dweo9'), ('lonard', 1, '098765gf')]
+
+
+def aut(users, login, password):
+    for user in users:  # Линейная
+        if login != user[0]:  # Константная
+            continue  # Константная
+        if user[1] != 1:  # Константная
+            print('Пройдите аутентификацию')  # Константная
+            return False  # Константная
+        if password != user[2]:  # Константная
+            print('Неверный пароль')  # Константная
+            return False  # Константная
+        print('Удачно')  # Константная
+        return True  # Константная
+
+
+def aut2(users, login, password):
+    for _ in users:     # Квадратичная
+        for n in range(len(users)):  # Линейная
+            if users[n][0] == login:  # Константная
+                if users[n][2] == password:  # Константная
+                    if users[n][1] == 1:  # Константная
+                        print('Удачно')  # Константная
+                        return True  # Константная
+                    else:
+                        print('Пройдите аутентификацию')  # Константная
+                        return False  # Константная
+                else:
+                    print('Неверный пароль')  # Константная
+                    return False  # Константная
+        print('Пользователь не найден')  # Константная
+        return False  # Константная
+
+
+log = str(input('Введите логин: '))
+pas = str(input('Введите пароль: '))
+
+aut(USERS, log, pas)  # Линейная
+aut2(USERS, log, pas)   # Квадратичная
