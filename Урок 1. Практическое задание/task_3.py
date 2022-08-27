@@ -17,3 +17,34 @@
 Примечание: ПРОШУ ВАС ВНИМАТЕЛЬНО ЧИТАТЬ ЗАДАНИЕ!
 """
 
+COMPANY = {'coca': 1, 'cola': 54, 'bmw': 12, 'ATnT': 5234}
+
+top_price = sorted(COMPANY.items(), reverse=True, key=lambda item: item[1])[:3]     # Линейно-логарифмическая
+print(top_price)    # Линейно-логарифмическая
+
+
+def line(list_num):
+    x = 0  # Константная
+    for n in list_num:  # Линейная
+        if x < n:  # Линейная
+            x = n  # Константная
+        if x == 0:  # Линейная
+            x = n  # Константная
+    return x  # Константная
+
+
+top = []  # Константная
+y = list(COMPANY.values())  # Константная
+com = COMPANY  # Константная
+c = 0  # Константная
+while True:
+    if len(top) == 3:   # Константная
+        break
+    if len(com) <= c:   # Константная
+        c = 0  # Константная
+    if line(y) == list(com.items())[c][1]:  # Константная
+        top.append(list(com.items())[c])  # Константная
+        y.remove(line(y))   # Константная
+        com.pop(list(com.items())[c][0])  # Константная
+    c += 1  # Константная
+print(top)  # Линейная
